@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@mattiasbuelens/web-streams-polyfill@0.1.0-alpha.4":
+  version "0.1.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@mattiasbuelens/web-streams-polyfill/-/web-streams-polyfill-0.1.0-alpha.4.tgz#fde9688fac83ff40e3be1a01973c867e12a74492"
+  dependencies:
+    "@types/whatwg-streams" "0.0.5"
+
+"@types/whatwg-streams@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@types/whatwg-streams/-/whatwg-streams-0.0.5.tgz#66c3852b8e33f2a2ca225a6d8fd8096e34d17fe6"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -95,7 +105,7 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
 
-amdefine@>=0.0.4, amdefine@~1.0.0:
+amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
@@ -258,9 +268,10 @@ asap@~2.0.3:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
 
-asmcrypto.js@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/asmcrypto.js/-/asmcrypto.js-0.22.0.tgz#38fc1440884d802c7bd37d1d23c2b26a5cd5d2d2"
+"asmcrypto.js@github:openpgpjs/asmcrypto":
+  version "2.3.0"
+  uid "6e4e407b9b8ae317925a9e677cc7b4de3e447e83"
+  resolved "https://codeload.github.com/openpgpjs/asmcrypto/tar.gz/6e4e407b9b8ae317925a9e677cc7b4de3e447e83"
 
 asn1.js@^4.0.0:
   version "4.10.1"
@@ -1587,7 +1598,7 @@ compressible@~2.0.13:
 
 compression@^1.5.2:
   version "1.7.2"
-  resolved "http://registry.npmjs.org/compression/-/compression-1.7.2.tgz#aaffbcd6aaf854b44ebb280353d5ad1651f59a69"
+  resolved "https://registry.npmjs.org/compression/-/compression-1.7.2.tgz#aaffbcd6aaf854b44ebb280353d5ad1651f59a69"
   dependencies:
     accepts "~1.3.4"
     bytes "3.0.0"
@@ -1596,13 +1607,6 @@ compression@^1.5.2:
     on-headers "~1.0.1"
     safe-buffer "5.1.1"
     vary "~1.1.2"
-
-"compressjs@github:openpgpjs/compressjs":
-  version "1.0.3-git"
-  resolved "https://codeload.github.com/openpgpjs/compressjs/tar.gz/ce5ccbede61f075926081e29573c8a79ddf10d88"
-  dependencies:
-    amdefine "~1.0.0"
-    commander "~2.8.1"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -4613,12 +4617,16 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-fetch@^1.0.1, node-fetch@^1.7.3:
+node-fetch@^1.0.1:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
+
+node-fetch@^2.1.2:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
 
 node-forge@0.7.5:
   version "0.7.5"
@@ -4834,22 +4842,23 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-openpgp@^3.0.11:
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/openpgp/-/openpgp-3.0.11.tgz#1c10e9446dd92ccff5ec76b870c06b6c3ddc9dc5"
+openpgp@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/openpgp/-/openpgp-4.3.0.tgz#7c54f6c075864b71c2cf046fe15905ef0110ee4e"
   dependencies:
+    "@mattiasbuelens/web-streams-polyfill" "0.1.0-alpha.4"
     address-rfc2822 "^2.0.3"
-    asmcrypto.js "^0.22.0"
+    asmcrypto.js "github:openpgpjs/asmcrypto"
     asn1.js "^5.0.0"
     bn.js "^4.11.8"
     buffer "^5.0.8"
-    compressjs "github:openpgpjs/compressjs"
     elliptic "github:openpgpjs/elliptic"
     hash.js "^1.1.3"
-    node-fetch "^1.7.3"
+    node-fetch "^2.1.2"
     node-localstorage "~1.3.0"
     pako "^1.0.6"
-    rusha "^0.8.12"
+    seek-bzip "github:openpgpjs/seek-bzip"
+    web-stream-tools "github:openpgpjs/web-stream-tools"
 
 opn@5.2.0:
   version "5.2.0"
@@ -6021,10 +6030,6 @@ run-async@^2.2.0:
   dependencies:
     is-promise "^2.1.0"
 
-rusha@^0.8.12:
-  version "0.8.13"
-  resolved "https://registry.yarnpkg.com/rusha/-/rusha-0.8.13.tgz#9a084e7b860b17bff3015b92c67a6a336191513a"
-
 rx-lite-aggregates@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite-aggregates/-/rx-lite-aggregates-4.0.8.tgz#753b87a89a11c95467c4ac1626c4efc4e05c67be"
@@ -6074,6 +6079,13 @@ schema-utils@^0.3.0:
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
   dependencies:
     ajv "^5.0.0"
+
+"seek-bzip@github:openpgpjs/seek-bzip":
+  version "1.0.5-git"
+  uid "6187fc025851d35c4e104a25ea15a10b9b8d6f7d"
+  resolved "https://codeload.github.com/openpgpjs/seek-bzip/tar.gz/6187fc025851d35c4e104a25ea15a10b9b8d6f7d"
+  dependencies:
+    commander "~2.8.1"
 
 select-hose@^2.0.0:
   version "2.0.0"
@@ -6960,6 +6972,11 @@ wbuf@^1.1.0, wbuf@^1.7.2:
   resolved "https://registry.yarnpkg.com/wbuf/-/wbuf-1.7.3.tgz#c1d8d149316d3ea852848895cb6a0bfe887b87df"
   dependencies:
     minimalistic-assert "^1.0.0"
+
+"web-stream-tools@github:openpgpjs/web-stream-tools":
+  version "0.0.1"
+  uid dc4b05e8a272b45819233f3df735423432beacfc
+  resolved "https://codeload.github.com/openpgpjs/web-stream-tools/tar.gz/dc4b05e8a272b45819233f3df735423432beacfc"
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
